@@ -29,8 +29,8 @@
     "start": "HOST=0.0.0.0 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "compose:up": "cd .. && docker-compose up -d"
+    "eject": "react-scripts eject"
+    
   },
   "eslintConfig": {
     "extends": [
