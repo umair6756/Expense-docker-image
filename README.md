@@ -1,1 +1,1 @@
-# Expense-docker-image
+# MERN Expense app
