@@ -28,10 +28,10 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: 🐳 Build Docker Images
-      run: docker-compose build
+      run: docker compose build
 
     - name: 📦 Push Docker Images to DockerHub
-      run: docker-compose push
+      run: docker compose push
 
     - name: 🚀 SSH & Deploy to EC2
       uses: appleboy/ssh-action@v1.0.0
