@@ -40,12 +40,8 @@ jobs:
         username: ${{ env.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd ~
-          if [ ! -d "Expense-docker-image" ]; then
-            git clone https://github.com/umair6756/Expense-docker-image.git mern-app
-          fi
+          git clone https://github.com/umair6756/Expense-docker-image.git mern-app
           cd Expense-docker-image
-          git pull
           docker-compose down
           docker-compose up -d
 
