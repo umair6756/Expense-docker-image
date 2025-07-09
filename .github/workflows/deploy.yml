@@ -40,7 +40,7 @@ jobs:
         username: ${{ env.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          git clone https://github.com/umair6756/Expense-docker-image.git mern-app
+          git clone https://github.com/umair6756/Expense-docker-image.git
           cd Expense-docker-image
           docker-compose down
           docker-compose up -d
