@@ -28,10 +28,10 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: 🐳 Build Docker Images
-      run: docker compose build
+      run: docker-compose build
 
     - name: 📦 Push Docker Images to DockerHub
-      run: docker compose push
+      run: docker-compose push
 
     - name: 🚀 SSH & Deploy to EC2
       uses: appleboy/ssh-action@v1.0.0
@@ -40,7 +40,11 @@ jobs:
         username: ${{ env.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd mern-app
+          cd ~
+          if [ ! -d "Expense-docker-image" ]; then
+            git clone https://github.com/umair6756/Expense-docker-image.git mern-app
+          fi
+          cd Expense-docker-image
           git pull
           docker-compose down
           docker-compose up -d
