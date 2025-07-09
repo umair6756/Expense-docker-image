@@ -31,7 +31,7 @@ services:
     volumes:
       - mongo-data:/data/db
 
- prometheus:
+  prometheus:
     image: prom/prometheus
     container_name: prometheus
     ports:
