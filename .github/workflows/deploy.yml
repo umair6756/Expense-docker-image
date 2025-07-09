@@ -10,7 +10,7 @@ jobs:
 
     env:
       EC2_USER: ubuntu
-      EC2_HOST: ec2-54-90-80-102.compute-1.amazonaws.com
+      EC2_HOST: ec2-44-201-255-255.compute-1.amazonaws.com
       IMAGE_TAG: build-${{ github.run_number }}
 
     steps:
